@@ -5,3 +5,10 @@ C:\Users\franc\source\repos\AirlineProject\AirlineProject\bin\Debug\AirlineProje
 C:\Users\franc\source\repos\AirlineProject\AirlineProject\bin\Debug\AirlineProject.pdb
 C:\Users\franc\source\repos\AirlineProject\AirlineProject\obj\Debug\AirlineProject.exe
 C:\Users\franc\source\repos\AirlineProject\AirlineProject\obj\Debug\AirlineProject.pdb
+C:\Users\ajaci\Downloads\Airline_Booking_System-master\AirlineProject\AirlineProject\bin\Debug\AirlineProject.exe.config
+C:\Users\ajaci\Downloads\Airline_Booking_System-master\AirlineProject\AirlineProject\bin\Debug\AirlineProject.exe
+C:\Users\ajaci\Downloads\Airline_Booking_System-master\AirlineProject\AirlineProject\bin\Debug\AirlineProject.pdb
+C:\Users\ajaci\Downloads\Airline_Booking_System-master\AirlineProject\AirlineProject\obj\Debug\AirlineProject.csprojAssemblyReference.cache
+C:\Users\ajaci\Downloads\Airline_Booking_System-master\AirlineProject\AirlineProject\obj\Debug\AirlineProject.csproj.CoreCompileInputs.cache
+C:\Users\ajaci\Downloads\Airline_Booking_System-master\AirlineProject\AirlineProject\obj\Debug\AirlineProject.exe
+C:\Users\ajaci\Downloads\Airline_Booking_System-master\AirlineProject\AirlineProject\obj\Debug\AirlineProject.pdb

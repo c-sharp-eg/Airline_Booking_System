@@ -30,8 +30,9 @@ namespace AirlineProject
             return choice;
         }
 
-        static int validateInt() //function will validate correct integer input
+        static int validateInt(string prompt) //function will validate correct integer input
         {
+            Console.Write(prompt);
             int input;
             while(!int.TryParse(Console.ReadLine(),out input))
             {
@@ -40,18 +41,27 @@ namespace AirlineProject
             return input;
         }
 
+        static string validateString(string prompt)
+        {
+            Console.Write(prompt);
+            string input = Console.ReadLine();
+            while (string.IsNullOrWhiteSpace(input) == true)
+            {
+                Console.Write("Enter a valid input: ");
+                input = Console.ReadLine();
+            }
+            return input;
+        }
+
         static void addFlight()
         {
             Console.Clear();
             Console.WriteLine("----------Add flight----------");
-            Console.Write("Please enter the flight number:");
-            int flightNum = validateInt();
-            Console.Write("Please enter the maximum number of seats:");
-            int maxSeats = validateInt();
-            Console.Write("Please enter the port of origin:");
-            string origin = Console.ReadLine();
-            Console.Write("Please enter the port of destination:");
-            string destination = Console.ReadLine();
+            
+            int flightNum = validateInt("Please enter the flight number:");
+            int maxSeats = validateInt("Please enter the maximum number of seats:");
+            string origin = validateString("Please enter the port of origin:");
+            string destination = validateString("Please enter the port of destination:");
 
             ac.addFlight(flightNum, origin, destination, maxSeats);
             Console.WriteLine("Flight successfully added..");
@@ -79,12 +89,9 @@ namespace AirlineProject
         {
             Console.Clear();
             Console.WriteLine("----------Add Customer----------");
-            Console.Write("Please enter the customer's first name:");
-            string fName = Console.ReadLine();
-            Console.Write("Please enter the customer's last name:");
-            string lName = Console.ReadLine();
-            Console.Write("Please enter the customer's phone:");
-            string phone = Console.ReadLine();
+            string fName = validateString("Please enter the customer's first name:");
+            string lName = validateString("Please enter the customer's last name:");
+            string phone = validateString("Please enter the customer's phone:");
 
             if(ac.addCustomer(fName,lName,phone))
                 Console.WriteLine("Customer successfully added..");
@@ -98,8 +105,7 @@ namespace AirlineProject
         {
             Console.Clear();
             Console.WriteLine(ac.customerList());
-            Console.Write("Please enter a customer id to delete:");
-            int cId = validateInt();
+            int cId = validateInt("Please enter a customer id to delete:");
             if(ac.deleteCustomer(cId))
                 Console.WriteLine("Customer with id {0} deleted",cId);
             else
@@ -113,8 +119,7 @@ namespace AirlineProject
         {
             Console.Clear();
             Console.WriteLine(ac.flightList());
-            Console.Write("Please enter a flight id to delete:");
-            int fId = validateInt();
+            int fId = validateInt("Please enter a flight id to delete:");
             if (ac.deleteFlight(fId))
                 Console.WriteLine("Flight with id {0} deleted", fId);
             else
@@ -130,10 +135,8 @@ namespace AirlineProject
             Console.Clear();
             Console.WriteLine(ac.customerList());
             Console.WriteLine(ac.flightList());
-            Console.Write("Please enter customer ID: ");
-            int cId = validateInt();
-            Console.Write("Please enter flight ID: ");
-            int fId = validateInt();
+            int cId = validateInt("Please enter customer ID: ");
+            int fId = validateInt("Please enter flight ID: ");
             if(ac.addBooking(cId,fId))
                 Console.WriteLine("Customer {0} has been added to flight {1}!",cId,fId);
             else

@@ -25,9 +25,26 @@ namespace AirlineProject
             listPassenger = new Customer[maxSeats];
         }
 
+        //check if a passenger is already in the flight
+        public bool passengerExist(Customer cust)
+        {
+            for (int i = 0; i < numPassengers; i++)
+            {
+                if (listPassenger[i].getCustomerId() == cust.getCustomerId())
+                {
+                    Console.WriteLine("\nCustomer is already part of the flight!!\n");
+                    return false;
+                }
+            }
+            return true;
+        }
+
         public bool addPassenger(Customer cust)
         {
             if (numPassengers >= maxSeats) return false;
+
+            if (!passengerExist(cust)) return false;
+
             listPassenger[numPassengers] = cust;
             numPassengers++;
             return true;

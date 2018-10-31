@@ -52,9 +52,14 @@ namespace AirlineProject
         public bool addBooking(int custId, int flightNum)
         {
             if(!(customMan.customerExist(custId) && flightMan.flightExist(flightNum))) { return false; }
+
             Customer customer = customMan.getCustomer(custId);
             Flight flight = flightMan.getFlight(flightNum);
-            return bookingMan.addBooking(customer, flight);
+
+            if (!flight.addPassenger(customer)) { return false; } 
+            
+            return bookingMan.addBooking(customer, flight);          
+
         }
 
         public string viewBookings()
